@@ -4,4 +4,7 @@ from typing import Text
 from django import forms
 
 class HashForm(forms.Form):
-    text = forms.CharField(label="Entar hash here:", widget=forms.Textarea)
+    text = forms.CharField(
+        label="Entar hash here:",
+        widget=forms.Textarea
+    )

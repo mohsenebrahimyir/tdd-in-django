@@ -1,7 +1,9 @@
+import hashlib
 from urllib import response
 from django.test import TestCase
 from selenium import webdriver
 from .forms import HashForm
+import hashlib
 
 
 # class FunctionalTestCase(TestCase):
@@ -36,3 +38,10 @@ class UnitTestCase(TestCase):
     def test_hash_form(self):
         form = HashForm(data={'text': 'hello'})
         self.assertTrue(form.is_valid())
+        
+    def test_hash_func_works(self):
+        text_hash = hashlib.sha256("hello".encode('utf-8')).hexdigest()
+        self.assertEqual(
+            "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824",
+            text_hash
+        )
