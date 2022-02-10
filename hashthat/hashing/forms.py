@@ -5,6 +5,6 @@ from django import forms
 
 class HashForm(forms.Form):
     text = forms.CharField(
-        label="Entar hash here:",
+        label="Enter hash here:",
         widget=forms.Textarea
     )
